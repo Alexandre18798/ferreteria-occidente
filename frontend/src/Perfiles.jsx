@@ -28,7 +28,7 @@ function Perfiles() {
   const cargarPerfiles = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/perfiles"
+        "https://ferreteria-occidente-backend.onrender.com/perfiles"
       );
 
       setPerfiles(response.data);
@@ -104,12 +104,12 @@ function Perfiles() {
 
       if (editando) {
         await axios.put(
-          `http://localhost:8080/perfiles/${perfilForm.idPerfil}`,
+          `https://ferreteria-occidente-backend.onrender.com/perfiles/${perfilForm.idPerfil}`,
           datos
         );
       } else {
         await axios.post(
-          "http://localhost:8080/perfiles",
+          "https://ferreteria-occidente-backend.onrender.com/perfiles",
           datos
         );
       }
@@ -143,7 +143,7 @@ function Perfiles() {
 
     try {
       await axios.delete(
-        `http://localhost:8080/perfiles/${idPerfil}`
+        `https://ferreteria-occidente-backend.onrender.com/perfiles/${idPerfil}`
       );
 
       await cargarPerfiles();

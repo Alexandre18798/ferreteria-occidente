@@ -68,13 +68,13 @@ function App() {
   const cargarDashboard = async () => {
     try {
       const respuestaResumen = await axios.get(
-        "http://localhost:8080/reportes/resumen"
+        "https://ferreteria-occidente-backend.onrender.com/reportes/resumen"
       );
 
       setResumen(respuestaResumen.data);
 
       const respuestaCompras = await axios.get(
-        "http://localhost:8080/reportes/compras-por-mes"
+        "https://ferreteria-occidente-backend.onrender.com/reportes/compras-por-mes"
       );
 
       const datosGrafica = Object.entries(
@@ -93,7 +93,7 @@ function App() {
   const cargarProductos = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/productos"
+        "https://ferreteria-occidente-backend.onrender.com/productos"
       );
 
       setProductos(response.data);
@@ -193,12 +193,12 @@ function App() {
 
       if (editando) {
         await axios.put(
-          `http://localhost:8080/productos/${productoForm.idProducto}`,
+          `https://ferreteria-occidente-backend.onrender.com/productos/${productoForm.idProducto}`,
           datos
         );
       } else {
         await axios.post(
-          "http://localhost:8080/productos",
+          "https://ferreteria-occidente-backend.onrender.com/productos",
           datos
         );
       }
@@ -232,7 +232,7 @@ function App() {
 
     try {
       await axios.delete(
-        `http://localhost:8080/productos/${id}`
+        `https://ferreteria-occidente-backend.onrender.com/productos/${id}`
       );
 
       await cargarProductos();

@@ -32,7 +32,7 @@ function Proveedores({ actualizarDashboard }) {
   const cargarProveedores = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/proveedores"
+        "https://ferreteria-occidente-backend.onrender.com/proveedores"
       );
 
       setProveedores(response.data);
@@ -120,12 +120,12 @@ function Proveedores({ actualizarDashboard }) {
 
       if (editando) {
         await axios.put(
-          `http://localhost:8080/proveedores/${proveedorForm.idProveedor}`,
+          `https://ferreteria-occidente-backend.onrender.com/proveedores/${proveedorForm.idProveedor}`,
           datos
         );
       } else {
         await axios.post(
-          "http://localhost:8080/proveedores",
+          "https://ferreteria-occidente-backend.onrender.com/proveedores",
           datos
         );
       }
@@ -162,7 +162,7 @@ function Proveedores({ actualizarDashboard }) {
 
     try {
       await axios.delete(
-        `http://localhost:8080/proveedores/${id}`
+        `https://ferreteria-occidente-backend.onrender.com/proveedores/${id}`
       );
 
       await cargarProveedores();

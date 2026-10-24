@@ -62,16 +62,16 @@ function Reportes() {
         respuestaProveedor,
         respuestaStock
       ] = await Promise.all([
-        axios.get("http://localhost:8080/reportes/resumen"),
-        axios.get("http://localhost:8080/reportes/compras-por-mes"),
+        axios.get("https://ferreteria-occidente-backend.onrender.com/reportes/resumen"),
+        axios.get("https://ferreteria-occidente-backend.onrender.com/reportes/compras-por-mes"),
         axios.get(
-          "http://localhost:8080/reportes/inventario-por-categoria"
+          "https://ferreteria-occidente-backend.onrender.com/reportes/inventario-por-categoria"
         ),
         axios.get(
-          "http://localhost:8080/reportes/compras-por-proveedor"
+          "https://ferreteria-occidente-backend.onrender.com/reportes/compras-por-proveedor"
         ),
         axios.get(
-          "http://localhost:8080/productos/stock-bajo/5"
+          "https://ferreteria-occidente-backend.onrender.com/productos/stock-bajo/5"
         )
       ]);
 

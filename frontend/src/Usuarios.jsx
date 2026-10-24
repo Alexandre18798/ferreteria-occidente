@@ -35,8 +35,8 @@ function Usuarios({ actualizarDashboard }) {
   const cargarDatos = async () => {
     try {
       const [respuestaUsuarios, respuestaPerfiles] = await Promise.all([
-        axios.get("http://localhost:8080/usuarios"),
-        axios.get("http://localhost:8080/perfiles")
+        axios.get("https://ferreteria-occidente-backend.onrender.com/usuarios"),
+        axios.get("https://ferreteria-occidente-backend.onrender.com/perfiles")
       ]);
 
       setUsuarios(respuestaUsuarios.data);
@@ -139,12 +139,12 @@ function Usuarios({ actualizarDashboard }) {
 
       if (editando) {
         await axios.put(
-          `http://localhost:8080/usuarios/${usuarioForm.idUsuario}`,
+          `https://ferreteria-occidente-backend.onrender.com/usuarios/${usuarioForm.idUsuario}`,
           datos
         );
       } else {
         await axios.post(
-          "http://localhost:8080/usuarios",
+          "https://ferreteria-occidente-backend.onrender.com/usuarios",
           datos
         );
       }
@@ -189,7 +189,7 @@ function Usuarios({ actualizarDashboard }) {
 
     try {
       await axios.delete(
-        `http://localhost:8080/usuarios/${idUsuario}`
+        `https://ferreteria-occidente-backend.onrender.com/usuarios/${idUsuario}`
       );
 
       await cargarDatos();

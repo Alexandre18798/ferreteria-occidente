@@ -50,10 +50,10 @@ function Compras({
         respuestaUsuarios,
         respuestaProductos
       ] = await Promise.all([
-        axios.get("http://localhost:8080/compras"),
-        axios.get("http://localhost:8080/proveedores"),
-        axios.get("http://localhost:8080/usuarios"),
-        axios.get("http://localhost:8080/productos")
+        axios.get("https://ferreteria-occidente-backend.onrender.com/compras"),
+        axios.get("https://ferreteria-occidente-backend.onrender.com/proveedores"),
+        axios.get("https://ferreteria-occidente-backend.onrender.com/usuarios"),
+        axios.get("https://ferreteria-occidente-backend.onrender.com/productos")
       ]);
 
       setCompras(respuestaCompras.data);
@@ -262,7 +262,7 @@ function Compras({
       };
 
       const respuestaCompra = await axios.post(
-        "http://localhost:8080/compras",
+        "https://ferreteria-occidente-backend.onrender.com/compras",
         datosCompra
       );
 
@@ -278,7 +278,7 @@ function Compras({
         };
 
         await axios.post(
-          "http://localhost:8080/detalle-compras",
+          "https://ferreteria-occidente-backend.onrender.com/detalle-compras",
           datosDetalle
         );
       }
@@ -315,7 +315,7 @@ function Compras({
   const verDetalle = async (compra) => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/detalle-compras"
+        "https://ferreteria-occidente-backend.onrender.com/detalle-compras"
       );
 
       const detalles = response.data.filter(

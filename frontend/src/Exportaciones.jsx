@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 function Exportaciones() {
-  const API = "http://localhost:8080/exportaciones";
+  const API = "https://ferreteria-occidente-backend.onrender.com/exportaciones";
 
   const opciones = [
     {
