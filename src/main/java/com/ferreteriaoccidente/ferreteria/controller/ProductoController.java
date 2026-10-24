@@ -25,6 +25,12 @@ public class ProductoController {
         return productoService.buscarPorId(id);
     }
 
+    @GetMapping("/stock-bajo/{limite}")
+    public List<Producto> listarStockBajo(@PathVariable Integer limite) {
+    return productoService.listarStockBajo(limite);
+
+    }
+
     @PostMapping
     public Producto guardar(@RequestBody ProductoDTO productoDTO) {
         return productoService.guardar(productoDTO);

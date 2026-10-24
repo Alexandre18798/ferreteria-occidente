@@ -36,6 +36,10 @@ public class ProductoService {
         return productoRepository.save(producto);
     }
 
+    public List<Producto> listarStockBajo(Integer limite) {
+        return productoRepository.findByStockLessThanEqual(limite);
+    }
+
     public void eliminar(Integer id) {
         productoRepository.deleteById(id);
     }

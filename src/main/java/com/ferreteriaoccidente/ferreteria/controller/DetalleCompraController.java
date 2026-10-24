@@ -24,11 +24,10 @@ public class DetalleCompraController {
  return detalleCompraService.guardar(detalleCompraDTO);
  }
  @PutMapping("/{id}")
- public DetalleCompra actualizar(@PathVariable Integer id,
- @RequestBody DetalleCompraDTO detalleCompraDTO) {
- detalleCompraDTO.setIdDetalleCompra(id);
- return detalleCompraService.guardar(detalleCompraDTO);
- }
+public DetalleCompra actualizar(@PathVariable Integer id,
+        @RequestBody DetalleCompraDTO detalleCompraDTO) {
+    return detalleCompraService.actualizar(id, detalleCompraDTO);
+}
  @DeleteMapping("/{id}")
  public void eliminar(@PathVariable Integer id) {
  detalleCompraService.eliminar(id);

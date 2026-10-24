@@ -1,5 +1,6 @@
 package com.ferreteriaoccidente.ferreteria.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,28 +14,29 @@ import jakarta.persistence.Table;
 @Table(name = "USUARIOS")
 public class Usuario {
 
-      @Id
-      @GeneratedValue(strategy = GenerationType.IDENTITY)
-      @Column(name = "id_usuario")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario")
     private Integer idUsuario;
 
-      @ManyToOne
-      @JoinColumn(name = "id_perfil", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_perfil", nullable = false)
     private Perfil perfil;
 
-      @Column(name = "nombre", length = 100)
+    @Column(name = "nombre", length = 100)
     private String nombre;
 
-      @Column(name = "usuario", length = 50, unique = true)
+    @Column(name = "usuario", length = 50, unique = true)
     private String usuario;
 
-      @Column(name = "contrasena", length = 255)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @Column(name = "contrasena", length = 255)
     private String contrasena;
 
-      @Column(name = "correo", length = 100)
+    @Column(name = "correo", length = 100)
     private String correo;
 
-      @Column(name = "estado")
+    @Column(name = "estado")
     private Boolean estado;
 
     public Usuario() {
